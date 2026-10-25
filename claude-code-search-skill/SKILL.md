@@ -30,7 +30,7 @@ Local clone first. If ~/buddyboss-support-tickets-case-study exists, run `git -C
 
 The script matches words, not meaning. When it returns nothing or only weak scores, read index/catalog-<type>.md yourself and judge each row by meaning.
 
-No clone: fetch over the web instead.
+No clone: fetch over the web instead. Use the web fetch tool with the exact URLs below. If it refuses a URL, or in claude.ai chat where it can refuse addresses it did not see verbatim, run `curl -s <url>` in the code execution tool instead. Both read the same files.
 
 1. Only when the ticket has an error message or code: https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/errors.md. An exact hit goes straight to step 3.
 2. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/catalog-<type>.md, where type is app, web, addon or integration. Prefer rows in the same area, then judge title and keywords by meaning, not only by shared words. Skip a row whose Applies to names a different variant from the ticket.
