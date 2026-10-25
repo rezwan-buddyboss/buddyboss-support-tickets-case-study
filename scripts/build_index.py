@@ -57,13 +57,13 @@ def main():
             "",
             "One line per case. Match on title and keywords, then open only the URL of the best 2 or 3.",
             "",
-            "| Area | Title | Keywords | Tickets | URL |",
-            "|---|---|---|---|---|",
+            "| Area | Applies to | Title | Keywords | Tickets | URL |",
+            "|---|---|---|---|---|---|",
         ]
         for case in cases:
             if case.get("type") == case_type:
                 rows.append(
-                    f"| {case.get('area', '')} | {case.get('title', '')} | {case.get('keywords', '')}"
+                    f"| {case.get('area', '')} | {case.get('applies_to', '')} | {case.get('title', '')} | {case.get('keywords', '')}"
                     f" | {case.get('tickets', '')} | {case['url']} |"
                 )
         (index / f"catalog-{case_type}.md").write_text("\n".join(rows) + "\n", encoding="utf-8")

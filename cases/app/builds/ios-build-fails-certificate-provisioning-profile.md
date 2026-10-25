@@ -5,6 +5,7 @@ area: builds
 tickets: sample
 error: "E016, E017"
 version: ""
+applies_to: classic, next gen
 keywords: ios build failed, E016, E017, distribution certificate, provisioning profile expired, regenerate certificate
 ---
 ## Short description
@@ -24,3 +25,6 @@ Certificate and provisioning profile have to be regenerated together. Resetting 
 
 ## How to recognize it next time
 E016 or E017 in the build log, especially when the customer says they already regenerated once.
+
+## What looked like the cause but wasn't
+Regenerating the certificate or the profile on its own. It looks like the right fix and fails again, because the stale half stays in place.

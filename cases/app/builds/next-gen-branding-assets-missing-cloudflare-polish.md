@@ -5,6 +5,7 @@ area: builds
 tickets: sample
 error: ""
 version: ""
+applies_to: next gen
 keywords: app icon missing, splash screen wrong, branding assets, next gen build, cloudflare polish, webp
 ---
 ## Short description
@@ -24,3 +25,6 @@ Cloudflare Polish silently serves PNG files as WebP, and the build pipeline rece
 
 ## How to recognize it next time
 Branding assets wrong on a Next Gen build, the site is on Cloudflare, and the build log is clean. Check Polish first, it takes two minutes.
+
+## What looked like the cause but wasn't
+The build log and version drift. The log shows nothing useful and the images look correct in the media library, so checking them first costs a day.

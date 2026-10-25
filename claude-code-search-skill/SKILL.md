@@ -20,16 +20,20 @@ Product type is one of four:
 
 Area is the folder name under the type, such as builds, groups, notifications-email or learndash.
 
+Customers rarely use the words a case uses. Before searching, add the likely KB words next to theirs: CF becomes Cloudflare, Flutter becomes Next Gen, React Native becomes Classic, logo becomes app icon, launch screen becomes splash screen, not getting emails becomes notifications email. Search with both sets.
+
 ## 2. Get the KB
 
 Local clone first. If ~/buddyboss-support-tickets-case-study exists, run `git -C ~/buddyboss-support-tickets-case-study pull --quiet` once per session, then:
 
     python3 ~/buddyboss-support-tickets-case-study/scripts/find_cases.py "<error and keywords>" --type <type> --area <area>
 
+The script matches words, not meaning. When it returns nothing or only weak scores, read index/catalog-<type>.md yourself and judge each row by meaning.
+
 No clone: fetch over the web instead.
 
 1. Only when the ticket has an error message or code: https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/errors.md. An exact hit goes straight to step 3.
-2. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/catalog-<type>.md, where type is app, web, addon or integration. Prefer rows in the same area, then match on title and keywords.
+2. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/catalog-<type>.md, where type is app, web, addon or integration. Prefer rows in the same area, then judge title and keywords by meaning, not only by shared words. Skip a row whose Applies to names a different variant from the ticket.
 3. Fetch the case URL of the best 1 to 3 rows and read it to confirm the match. A catalog row alone is never enough to call it a match.
 
 If the issue sits between two types, such as a LearnDash page inside the Theme, also check the second catalog. A catalog with no rows, or no row sharing the symptom, means no match there.
