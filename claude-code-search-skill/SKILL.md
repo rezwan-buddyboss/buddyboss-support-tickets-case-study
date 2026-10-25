@@ -9,7 +9,16 @@ Solved complex tickets live as case files in the public repo rezwan-buddyboss/bu
 
 ## 1. Pull five signals from the ticket
 
-Error message or code, product type (app, web, addon, integration), area (builds, groups, learndash and so on), 3 to 8 keywords in the customer's words, version if mentioned.
+Error message or code, product type, area, 3 to 8 keywords in the customer's words, version if mentioned.
+
+Product type is one of four:
+
+- app: the BuddyBoss App, Classic or Next Gen. Builds, AppCenter, push, in-app login, branding
+- web: BuddyBoss Platform, Platform Pro, Theme and ReadyLaunch features. Groups, activity, messages, notifications and emails, profiles, forums, media, registration
+- addon: BuddyBoss add-on plugins. Gamification, Offload Media, Sharing
+- integration: third-party plugins. LearnDash, MemberPress, Paid Memberships Pro, WooCommerce, OneSignal
+
+Area is the folder name under the type, such as builds, groups, notifications-email or learndash.
 
 ## 2. Get the KB
 
@@ -19,9 +28,11 @@ Local clone first. If ~/buddyboss-support-tickets-case-study exists, run `git -C
 
 No clone: fetch over the web instead.
 
-1. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/errors.md when the ticket has an error message or code
-2. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/catalog-<type>.md for the product type
-3. Fetch only the URLs of the best 2 or 3 matching rows
+1. Only when the ticket has an error message or code: https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/errors.md. An exact hit goes straight to step 3.
+2. https://raw.githubusercontent.com/rezwan-buddyboss/buddyboss-support-tickets-case-study/main/index/catalog-<type>.md, where type is app, web, addon or integration. Prefer rows in the same area, then match on title and keywords.
+3. Fetch the case URL of the best 1 to 3 rows and read it to confirm the match. A catalog row alone is never enough to call it a match.
+
+If the issue sits between two types, such as a LearnDash page inside the Theme, also check the second catalog. A catalog with no rows, or no row sharing the symptom, means no match there.
 
 ## 3. Use what you find
 
